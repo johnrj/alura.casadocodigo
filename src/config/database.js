@@ -16,7 +16,7 @@ INSERT INTO usuarios (
     nome_completo, 
     email,
     senha
-) SELECT 'Johann', 'johnrj@gmail.com', '123' WHERE NOT EXISTS (SELECT * FROM usuarios WHERE email = 'gabriel@alura.com.br')
+) SELECT 'Johann Lemmermann', 'johnrj@gmail.com', '123' WHERE NOT EXISTS (SELECT * FROM usuarios WHERE email = 'gabriel@alura.com.br')
 `;
 
 const LIVROS_SCHEMA =
@@ -25,7 +25,8 @@ CREATE TABLE IF NOT EXISTS livros (
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     titulo TEXT NOT NULL, 
     preco REAL NOT NULL,
-    descricao TEXT DEFAULT ('') NOT NULL
+    descricao TEXT DEFAULT ('') NOT NULL, 
+    url_capa TEXT
 )
 `;
 
