@@ -1,0 +1,29 @@
+{
+    "name": "alura.casadocodigo",
+    "version": "0.0.1",
+    "description": "Curso de NodeJS Alura",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon server.js --ignore *.marko.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/johnrj/alura.casadocodigo.git"
+    },
+    "author": "Johann Lemmermann",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/johnrj/alura.casadocodigo/issues"
+    },
+    "homepage": "https://github.com/johnrj/alura.casadocodigo#readme",
+    "dependencies": {
+        "body-parser": "1.18.3",
+        "express": "4.16.3",
+        "marko": "4.13.4-1",
+        "sqlite3": "4.0.2"
+    },
+    "devDependencies": {
+        "nodemon": "1.18.4"
+    }
+}
