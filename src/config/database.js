@@ -50,16 +50,16 @@ INSERT INTO livros (
 
 bd.serialize(() => {
     bd.run("PRAGMA foreign_keys=ON");
-    //bd.run(USUARIOS_SCHEMA);
-    //bd.run(INSERIR_USUARIO_1);
-    //bd.run(LIVROS_SCHEMA);
-    //bd.run(INSERIR_LIVRO_1);
-    //bd.run(INSERIR_LIVRO_2);
+    // bd.run(USUARIOS_SCHEMA);
+    // bd.run(INSERIR_USUARIO_1);
+    // bd.run(LIVROS_SCHEMA);
+    // bd.run(INSERIR_LIVRO_1);
+    // bd.run(INSERIR_LIVRO_2);
 
-    //bd.each("SELECT * FROM usuarios", (err, usuario) => {
-    //    console.log('Usuario: ');
-    //    console.log(usuario);
-    //});
+    // bd.each("SELECT * FROM usuarios", (err, usuario) => {
+    //     console.log('Usuario: ');
+    //     console.log(usuario);
+    // });
 });
 
 process.on('SIGINT', () =>

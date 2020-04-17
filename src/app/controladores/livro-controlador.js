@@ -7,6 +7,7 @@ const db = require('../../config/database');
 class LivroControlador {
     static rotas() {
         return {
+            autenticadas: '/livros*',
             lista: '/livros',
             cadastro: '/livros/form',
             edicao: '/livros/form/:id',

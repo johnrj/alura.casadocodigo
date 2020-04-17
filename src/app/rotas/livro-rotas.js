@@ -1,16 +1,27 @@
 const LivroControlador = require('../controladores/livro-controlador');
 const Livro = require('../modelos/livro');
 const livroControlador = new LivroControlador();
+const BaseControlador = require('../controladores/base-controlador');
 
 module.exports = (app) => {
-    app.get(LivroControlador.rotas().lista, livroControlador.lista());
+    const rotasLivro = LivroControlador.rotas();
 
-    app.route(LivroControlador.rotas().cadastro)
+    app.use(rotasLivro.autenticadas, function(req, resp, next) {
+        if (req.isAuthenticated()) {
+            next();
+        } else {
+            resp.redirect(BaseControlador.rotas().login);
+        }
+    });
+
+    app.get(rotasLivro.lista, livroControlador.lista());
+
+    app.route(rotasLivro.cadastro)
         .get(livroControlador.cadastro())
         .post(Livro.validacoes(), livroControlador.post())
         .put(Livro.validacoes(), livroControlador.put());
 
-    app.get(LivroControlador.rotas().edicao, livroControlador.edicao());
+    app.get(rotasLivro.edicao, livroControlador.edicao());
 
-    app.delete(LivroControlador.rotas().delecao, livroControlador.delete());
+    app.delete(rotasLivro.delecao, livroControlador.delete());
 };
